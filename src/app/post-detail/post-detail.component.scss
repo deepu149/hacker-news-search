@@ -1,0 +1,39 @@
+.post-detail {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post-detail h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .post-detail p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .comments-section {
+    margin-top: 30px;
+  }
+  
+  .comments-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comments-section li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .comments-section li p {
+    font-size: 1em;
+  }
+  
+  a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  

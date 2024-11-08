@@ -1,0 +1,70 @@
+<div class="container-fluid m-0 p-0">
+    <div class="row head m-0 p-0">
+        <div class="col-12 m-0 p-0"><app-header></app-header></div>
+    </div>
+   
+    <div class="row body m-0 p-0">
+        <div class="col-12 h-100 m-0 p-0">
+            <div class="search w-100 d-flex justily-content-center">
+                <mat-form-field appearance="outline" class="w-50 pt-2">
+                    <mat-label>Search here</mat-label>
+                    <input matInput [(ngModel)]="searchQuery" placeholder="Search posts" (keydown.enter)="onSearch()" />
+                    <!-- Search Button inside the Form Field -->
+                    <button mat-icon-button matSuffix (click)="onSearch()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <button mat-icon-button matSuffix (click)="clearSearch()">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <table mat-table [dataSource]="dataSource" matSort>
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                        <td mat-cell *matCellDef="let post">{{ post.objectID }}</td>
+                    </ng-container>
+    
+                    <!-- Title Column -->
+                    <ng-container matColumnDef="title">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+                        <td mat-cell *matCellDef="let post" (click)="viewPostDetails(post.objectID)">
+                            {{ post.title }}
+                        </td>
+                    </ng-container>
+    
+                    <!-- Author Column -->
+                    <ng-container matColumnDef="author">
+                        <th mat-header-cell *matHeaderCellDef>Author</th>
+                        <td mat-cell *matCellDef="let post">{{ post.author }}</td>
+                    </ng-container>
+    
+                    <!-- Points Column -->
+                    <ng-container matColumnDef="points">
+                        <th mat-header-cell *matHeaderCellDef>Points</th>
+                        <td mat-cell *matCellDef="let post">
+                            {{ post.points }}
+                        </td>
+                    </ng-container>
+    
+                    <!-- URL Column -->
+                    <ng-container matColumnDef="url">
+                        <th mat-header-cell *matHeaderCellDef>URL</th>
+                        <td mat-cell *matCellDef="let post">
+                            <a [href]="post.url" target="_blank">{{ post.url }}</a>
+                        </td>
+                    </ng-container>
+    
+                    <!-- Table Header and Body -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; sticky: true"></tr>
+                </table>
+    
+                <mat-paginator [length]="dataSource.data.length" [pageSize]="10" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+       
+        
+    </div>
+</div>

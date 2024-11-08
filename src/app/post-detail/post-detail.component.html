@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12"><app-header></app-header></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div *ngIf="postDetails; else loading">
+                <h1>{{ postDetails.title }}</h1>
+                <p><strong>Author:</strong> {{ postDetails.author }}</p>
+                <p><strong>URL:</strong> <a [href]="postDetails.url" target="_blank">{{ postDetails.url }}</a></p>
+            </div>
+            
+            <ng-template #loading>
+                <p>Loading post details...</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+
+

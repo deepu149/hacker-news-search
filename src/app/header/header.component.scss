@@ -1,0 +1,42 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff742b;
+  }
+  
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-size: 1.2rem;
+  }
+  
+  .toolbar-middle a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar {
+    width: 250px;
+  }
+  
+::ng-deep{
+    .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+        padding: 0 1em;
+        display: none;
+    }
+}

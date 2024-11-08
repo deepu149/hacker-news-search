@@ -1,0 +1,48 @@
+.container-fluid {
+  background: rgb(187, 175, 171);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.head {
+  height: 64px;
+  position: fixed;
+  width: 100%;
+}
+.body {
+  height: calc(100% - 64px);
+  width: 100%;
+  position: relative;
+  top: 64px;
+
+  .search {
+    height: 80px;
+    justify-content: center;
+  }
+  .example-container {
+    height: calc(100% - 93px);
+    overflow: auto;
+    table {
+      width: 100%;
+    }
+    th,
+    td {
+      padding-right: 2rem;
+    }
+  }
+
+
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline {
+    color: black;
+  }
+  .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #6f42c1;
+  }
+}
